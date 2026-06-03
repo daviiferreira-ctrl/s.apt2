@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Agendamentos - VetKet</title>
+    <!-- Chamando o seu CSS novo e forçando a limpeza do cache do navegador -->
+    <link rel="stylesheet" href="css/stylecopy.css?v=5">
+</head>
+<body>
+
+    <!-- A barra de navegação verde menta com os efeitos novos -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Nossa clínica de agendamento do Vetket</div>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="agendamento.html">Agendamento</a></li>
+                <li><a href="listar.html">Listar</a></li>
+                <li><a href="adocao.php">Adotar</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="login.php">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção da lista que vai ganhar o fundo branco dentro do fundo creme -->
+    <main class="list-section">
+        <h2>Lista de Agendamentos</h2>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Nome responsável</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Data de agendamento</th>
+                    <th>Horário de agendamento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ item.nome }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.telefone }}</td>
+                    <td>{{ item.date }}</td>
+                    <td>{{ item.horario }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="mensagem-vazia" style="margin-top: 15px; font-style: italic;">Nenhum dado cadastrado ainda.</p>
+        
+        <!-- O botão voltar com o efeito rosa que cresce ao passar o mouse -->
+        <div class="btn-container">
+            <a href="javascript:history.back()" class="btn-voltar">Voltar</a>
+        </div>
+    </main>
+
+</body>
+</html>
+
