@@ -1,0 +1,855 @@
+/* ==========================================================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff2e3; /* Fundo Creme Suave */
+    color: #3d4a45; /* Cinza esverdeado escuro para melhor legibilidade */
+}
+
+/* Configuração específica para a tela de login */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #97c6b5, #fff2e3); /* Transição suave entre as duas cores */
+}
+
+/* ==========================================================================
+   2. ESTRUTURA DA NAVBAR / MENU
+   ========================================================================== */
+.navbar {
+    background: #97c6b5; /* Fundo Verde Menta */
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    box-shadow: 0 4px 12px rgba(151, 198, 181, 0.3); /* Sombra suave combinando com o menu */
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    color: #fff2e3; /* Brilho em creme ao passar o mouse */
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   3. CARD DE LOGIN E FORMULÁRIOS
+   ========================================================================== */
+.login-container {
+    background: #ffffff;
+    padding: 40px 24px;
+    border-radius: 16px;
+    box-shadow: 0px 16px 36px rgba(151, 198, 181, 0.25);
+    width: 350px;
+    animation: fadein 0.4s ease-in-out;
+}
+
+.form-section, .list-section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-section h2, .list-section h2 {
+    margin-bottom: 24px;
+    color: #97c6b5; /* Títulos principais em Verde Menta */
+    font-size: 1.8rem;
+    border-bottom: 3px solid #e4adcc; /* Detalhe inferior em Rosa */
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.form-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-card label {
+    font-weight: 600;
+    color: #4a5752;
+    margin-bottom: -6px;
+}
+
+.form-card input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1ebe7;
+    border-radius: 8px;
+    outline: none;
+    background-color: #fafdfc;
+    transition: border-color 0.3s ease;
+}
+
+.form-card input:focus {
+    border-color: #97c6b5; /* Borda destaca em Verde ao clicar */
+}
+
+.form-card button {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: #e4adcc; /* Botão chamativo em Rosa */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(228, 173, 204, 0.3);
+}
+
+.form-card button:hover {
+    background-color: #97c6b5; /* Inverte para Verde Menta no hover */
+    box-shadow: 0 4px 12px rgba(151, 198, 181, 0.3);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   4. SEÇÃO SOBRE, BOAS-VINDAS E IMAGENS
+   ========================================================================== */
+.welcome, .sobre {
+    background: #ffffff; /* Fundo branco para destacar do fundo creme */
+    padding: 40px;
+    border-radius: 16px;
+    border: 2px solid #97c6b5; /* Bordas marcadas em Verde Menta */
+    box-shadow: 0 8px 24px rgba(151, 198, 181, 0.15);
+    text-align: center;
+    margin: 30px auto;
+    max-width: 1000px;
+}
+
+.welcome h1, .sobre h1 {
+    margin-bottom: 16px;
+    color: #e4adcc; /* Títulos de boas-vindas em Rosa */
+    font-size: 2.2rem;
+}
+
+.welcome p, .sobre p {
+    margin-bottom: 28px;
+    line-height: 1.7;
+    color: #55645e;
+    font-size: 1.1rem;
+}
+
+.img, .vetke-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.img img, .vetke-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 24px; /* Deixa os cantos da imagem bem arredondados e suaves */
+    box-shadow: 0 10px 30px rgba(151, 198, 181, 0.4); /* Cria uma sombra esfumaçada usando o verde menta */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Prepara a imagem para uma animação suave */
+}
+
+/* Efeito especial: a imagem cresce de leve e a sombra aumenta ao passar o mouse */
+.img img:hover, .vetke-container img:hover {
+    transform: scale(1.02); /* Aumenta a imagem em apenas 2% de forma elegante */
+    box-shadow: 0 15px 35px rgba(151, 198, 181, 0.6); /* Intensifica a sombra */
+}
+
+/* Elementos de Texto auxiliares do Login */
+.mensagem {
+    color: #df3103; /* Mantido em vermelho para destaque de erros gráficos */
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.conta {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.conta a {
+    text-decoration: none;
+    color: #e4adcc; /* Link de cadastro em Rosa */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.conta a:hover {
+    color: #97c6b5; /* Altera para Verde Menta no hover */
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   5. COMPONENTES DE MENSAGENS E TABELAS
+   ========================================================================== */
+.mensagens {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.mensagens p {
+    padding: 12px;
+    border-radius: 8px;
+    margin: 6px 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.mensagens .sucesso { background: #e2f3ee; color: #275a47; border-left: 4px solid #97c6b5; }
+.mensagens .erro    { background: #fcecf4; color: #7a3a5d; border-left: 4px solid #e4adcc; }
+.mensagens .info    { background: #fffaf4; color: #6b563d; border-left: 4px solid #fff2e3; }
+
+/* Estrutura das Tabelas de Dados */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.data-table th, .data-table td {
+    padding: 14px;
+    border-bottom: 1px solid #eef4f2;
+    text-align: left;
+}
+
+.data-table thead th {
+    background-color: #97c6b5; /* Cabeçalho Verde Menta */
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.data-table tbody tr:hover {
+    background-color: #fffbf7; /* Destaque sutil ao passar o mouse nas linhas */
+}
+
+.data-table thead th:nth-child(1) { width: 15%; }
+.data-table thead th:nth-child(2) { width: 20%; }
+.data-table thead th:nth-child(3) { width: 12%; }
+.data-table thead th:nth-child(4) { width: 10%; }
+.data-table thead th:nth-child(5) { width: 12%; }
+.data-table thead th:nth-child(6) { width: 11%; }
+.data-table thead th:nth-child(7) { width: 15%; }
+
+/* ==========================================================================
+   6. ANIMAÇÕES
+   ========================================================================== */
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ==========================================================================
+   7. BOTÃO VOLTAR PERSONALIZADO
+   ========================================================================== */
+.btn-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-voltar {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #e4adcc; /* Rosa Pastel */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(228, 173, 204, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #97c6b5; /* Transiciona para o Verde Menta no hover */
+    box-shadow: 0 4px 12px rgba(151, 198, 181, 0.3);
+    transform: translateY(-2px);
+    color: #ffffff;
+    text-decoration: none;
+}
+/* ==========================================================================
+   EFEITO UNIFICADO PARA TODOS OS BOTÕES DO SISTEMA
+   ========================================================================== */
+
+/* 1. Botões de Formulários (Login, Cadastro, Agendamento) */
+.form-card button {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: #e4adcc; /* Rosa Pastel */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 16px rgba(228, 173, 204, 0.35); /* Sombra inicial rosa suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Transição suave de tamanho e sombra */
+}
+
+/* Efeito Hover nos botões de formulário */
+.form-card button:hover {
+    background-color: #97c6b5; /* Transiciona suavemente para o Verde Menta */
+    box-shadow: 0 10px 24px rgba(151, 198, 181, 0.5); /* Sombra expande no tom verde menta */
+    transform: scale(1.02); /* Cresce suavemente 2% */
+}
+
+/* 2. Botões de Voltar (Páginas Internas) */
+.btn-voltar {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #e4adcc; /* Rosa Pastel */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(228, 173, 204, 0.35); /* Sombra inicial rosa suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Mesma animação fluida */
+}
+
+/* Efeito Hover nos botões de voltar */
+.btn-voltar:hover {
+    background-color: #97c6b5; /* Transiciona para o Verde Menta */
+    box-shadow: 0 10px 24px rgba(151, 198, 181, 0.5); /* Sombra verde menta expandida */
+    transform: scale(1.02); /* Cresce suavemente 2% */
+    color: #ffffff;
+    text-decoration: none;
+}
+/* ==========================================================================
+   CORREÇÃO DO CARROSSEL DE EXIBIÇÃO ISOLADA (FOTO POR FOTO)
+   ========================================================================== */
+.sobre-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.sobre-texto {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(151, 198, 181, 0.15);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ambiente-secao {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.ambiente-secao h2, .equipe-secao h2 {
+    color: #97c6b5;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    display: inline-block;
+    border-bottom: 3px solid #e4adcc;
+    padding-bottom: 6px;
+}
+
+/* Moldura fixa para o Carrossel */
+.carrossel-wrapper {
+    position: relative;
+    max-width: 700px;
+    height: 450px;
+    margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 3px solid #97c6b5;
+    background: #ffffff;
+    overflow: hidden; /* Corta qualquer imagem que tente vazar */
+}
+
+/* Esconde os inputs originais */
+.carrossel-wrapper input[type="radio"] {
+    display: none;
+}
+
+/* Janela de exibição das imagens */
+.carrossel-imagens {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Força todas as imagens a ocuparem exatamente o mesmo espaço sobreposto */
+.slide-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out; /* Transição de fade suave */
+}
+
+.slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* LÓGICA DO CLIQUE ATUALIZADA: Exibe apenas a imagem selecionada */
+#img1:checked ~ .carrossel-imagens .item-1 { opacity: 1; visibility: visible; }
+#img2:checked ~ .carrossel-imagens .item-2 { opacity: 1; visibility: visible; }
+#img3:checked ~ .carrossel-imagens .item-3 { opacity: 1; visibility: visible; }
+
+/* Controles de bolinhas inferiores */
+.carrossel-navegacao {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 20;
+}
+
+.barra-clique {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #97c6b5;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.barra-clique:hover {
+    background-color: #e4adcc;
+}
+
+/* Destaca a bolinha da foto que está ativa na tela */
+#img1:checked ~ .carrossel-navegacao .barra-clique:nth-child(1),
+#img2:checked ~ .carrossel-navegacao .barra-clique:nth-child(2),
+#img3:checked ~ .carrossel-navegacao .barra-clique:nth-child(3) {
+    background-color: #e4adcc;
+    width: 30px; /* Estica a bolinha ativa para dar um efeito moderno */
+    border-radius: 8px;
+}
+/* ==========================================================================
+   PÁGINA SOBRE: AJUSTE DE TAMANHO DO CARROSSEL E ALINHAMENTO DA EQUIPE
+   ========================================================================== */
+
+.sobre-container {
+    max-width: 1000px; /* Reduzido levemente para um layout mais compacto */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.sobre-texto {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(151, 198, 181, 0.15);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ambiente-secao {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.ambiente-secao h2, .equipe-secao h2 {
+    color: #97c6b5;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    display: inline-block;
+    border-bottom: 3px solid #e4adcc;
+    padding-bottom: 6px;
+}
+
+/* --- MOLDURA DO CARROSSEL COM TAMANHO CORRIGIDO --- */
+.carrossel-wrapper {
+    position: relative;
+    max-width: 650px; /* Tamanho horizontal ideal para fotos do ambiente */
+    height: 380px;    /* Altura reduzida para não quebrar o layout da página */
+    margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 3px solid #97c6b5;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.carrossel-wrapper input[type="radio"] {
+    display: none;
+}
+
+.carrossel-imagens {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta a imagem proporcionalmente sem distorcer */
+}
+
+/* Lógica de exibição */
+#img1:checked ~ .carrossel-imagens .item-1 { opacity: 1; visibility: visible; }
+#img2:checked ~ .carrossel-imagens .item-2 { opacity: 1; visibility: visible; }
+#img3:checked ~ .carrossel-imagens .item-3 { opacity: 1; visibility: visible; }
+
+/* Controles inferiores (Bolinhas) */
+.carrossel-navegacao {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 20;
+}
+
+.barra-clique {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #97c6b5;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.barra-clique:hover {
+    background-color: #e4adcc;
+}
+
+#img1:checked ~ .carrossel-navegacao .barra-clique:nth-child(1),
+#img2:checked ~ .carrossel-navegacao .barra-clique:nth-child(2),
+#img3:checked ~ .carrossel-navegacao .barra-clique:nth-child(3) {
+    background-color: #e4adcc;
+    width: 30px;
+    border-radius: 8px;
+}
+
+/* --- SEÇÃO DA EQUIPE 100% ALINHADA CENTRALIZADA --- */
+.equipe-secao {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.equipe-grid {
+    display: flex;
+    justify-content: center; /* Centraliza os blocos horizontalmente */
+    align-items: stretch;    /* Mantém todos os cards com a mesma altura */
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.equipe-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 16px;
+    width: 260px;
+    box-shadow: 0 6px 20px rgba(151, 198, 181, 0.12);
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;   /* Alinha itens em coluna vertical */
+    align-items: center;      /* Centraliza a foto, nome e cargo rigorosamente no meio */
+    text-align: center;       /* Garante que o texto fique centralizado */
+    transition: all 0.3s ease;
+}
+
+.equipe-card:hover {
+    border-color: #e4adcc;
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(228, 173, 204, 0.25);
+}
+
+/* Tamanho uniforme para os Avatares circulares */
+.avatar-wrapper {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 18px; /* Espaço simétrico entre a foto e o nome */
+    border-radius: 50%;  /* Círculo perfeito */
+    overflow: hidden;
+    border: 3px solid #97c6b5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.equipe-card h3 {
+    font-size: 1.25rem;
+    color: #3d4a45;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.equipe-card p {
+    color: #97c6b5;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.sobre-texto {
+    background: #ffffff;
+    padding: 40px 30px; /* Mais espaçamento interno */
+    border-radius: 20px; /* Cantos mais arredondados e modernos */
+    box-shadow: 0 12px 32px rgba(151, 198, 181, 0.18); /* Sombra mais suave com fundo menta */
+    text-align: center;
+    margin-bottom: 50px;
+    border: 1px solid rgba(151, 198, 181, 0.2); /* Borda imperceptível para acabamento */
+}
+
+.sobre-texto h1 {
+    color: #e4adcc; /* Título no Rosa Pastel */
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+/* Linha decorativa abaixo do título */
+.sobre-texto h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #97c6b5; /* Detalhe em Verde Menta */
+    border-radius: 2px;
+    margin: 10px auto 0 auto;
+}
+
+.sobre-texto p {
+    color: #5d6e66; /* Tom cinza esverdeado confortável para leitura */
+    line-height: 1.8;
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin: 20px auto 0 auto;
+}
+
+/* ==========================================================================
+   PÁGINA DE ADOÇÃO: GRID DE CARDS E INFORMAÇÕES DOS PETS
+   ========================================================================== */
+
+.adocao-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.adocao-topo {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(151, 198, 181, 0.15);
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.adocao-topo h1 {
+    color: #e4adcc;
+    font-size: 2.3rem;
+    margin-bottom: 12px;
+}
+
+.adocao-topo p {
+    color: #5d6e66;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Estrutura de Alinhamento dos Cards */
+.adocao-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Faz os cards irem para baixo se a tela for pequena */
+}
+
+/* Estilo do Card Individual */
+.pet-card {
+    background: #ffffff;
+    border-radius: 16px;
+    width: 300px;
+    overflow: hidden; /* Garante que a foto respeite os cantos arredondados */
+    box-shadow: 0 6px 20px rgba(151, 198, 181, 0.12);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.pet-card:hover {
+    border-color: #e4adcc;
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(228, 173, 204, 0.25);
+}
+
+/* Área da foto padronizada */
+.pet-imagem {
+    position: relative;
+    width: 100%;
+    height: 220px; /* Altura fixa para que todas as fotos tenham o mesmo tamanho */
+    background-color: #fcf8f2;
+}
+
+.pet-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta a imagem perfeitamente sem amassar */
+}
+
+/* Selo de Espécie no topo da foto */
+.pet-especie {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #97c6b5;
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Bloco de textos internos do card */
+.pet-info {
+    padding: 22px;
+    text-align: left;
+}
+
+.pet-info h3 {
+    font-size: 1.4rem;
+    color: #3d4a45;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.pet-detalhes {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pet-detalhes p {
+    margin: 0;
+    color: #55645e;
+    font-size: 0.95rem;
+}
+
+/* Selos (Badges) de Estado de Saúde */
+.badge {
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.saude-excelente {
+    background-color: #e2f3ee;
+    color: #275a47;
+}
+
+.saude-vacinado {
+    background-color: #fff6ec;
+    color: #7c5426;
+}
+
+/* Botão Interno de Adoção */
+.btn-adotar {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #e4adcc;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(228, 173, 204, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-adotar:hover {
+    background-color: #97c6b5;
+    box-shadow: 0 6px 16px rgba(151, 198, 181, 0.35);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Efeito visual para a foto clicável de adoção */
+.pet-imagem-link {
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+
